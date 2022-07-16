@@ -1,1 +1,7 @@
-<h1>Search result</h1>
+<h1>Search result for "<%= @key_word %>"</h1>
+<p><%= @response %></p>
+<% if @beers != [] %>
+  <% @beers.each do |beer| %>
+    <p><%= beer.name %></p><br>
+  <% end %>
+<% end %>
