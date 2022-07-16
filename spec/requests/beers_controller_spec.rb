@@ -1,9 +1,7 @@
-require 'spec_helper'
 require 'rails_helper'
 
 RSpec.describe BeersController, type: :controller do
   describe '#index' do
-
     punk_ipa = Beer.create(name: 'Punk IPA', description: 'This is a nice IPA.')
     buzz = Beer.create(name: 'Buzz', description: 'A light, crisp and bitter IPA.')
     black_dog = Beer.create(name: 'Black dog', description: 'Hoppy Black Wheat Stout')
