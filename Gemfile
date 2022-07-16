@@ -51,3 +51,15 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# PgSearch builds named scopes that take advantage of PostgreSQL's full text search
+gem 'pg_search'
+
+# Simple form
+gem 'simple_form'
+
+# rspec for testing where 3.4 is the latest version.
+group :development, :test do
+  gem 'rspec-rails', ">= 3.9.0"
+  gem 'rails-controller-testing'
+end
