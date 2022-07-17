@@ -1,19 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe BeersController, type: :controller do
-  punk_ipa = Beer.create(name: 'Punk IPA', abv: 5.4,
+  punk_ipa = Beer.create(name: 'Punk IPA', abv: 5.4, tagline: 'Post modern classic. Spiky. Tropical. Hoppy',
                          description: "Our flagship beer that kick started the craft beer revolution.
                          This is James and Martin's original take on an American IPA.",
                          food: ['Spicy carne asada with a pico de gallo sauce', 'Shredded chicken tacos with a mango chilli lime salsa',
                                 'Cheesecake with a passion fruit swirl sauce'],
                          image: 'https://presshub.brewdog.com/images/cms/large/1440777209BREWDOGLOGO.jpg')
 
-  buzz = Beer.create(name: 'Buzz', abv: 4.5, description: 'A light, crisp and bitter IPA.',
+  buzz = Beer.create(name: 'Buzz', abv: 4.5, tagline: 'A real bitter experience',
+                     description: 'A light, crisp and bitter IPA.',
                      food: ['Spicy chicken tikka masala', 'Grilled chicken quesadilla',
                             'Caramel toffee cake'],
                      image: 'https://presshub.brewdog.com/images/cms/large/1440777209BREWDOGLOGO.jpg')
 
-  black_dog = Beer.create(name: 'Black dog', abv: 5.5, description: 'Hoppy Black Wheat Stout',
+  black_dog = Beer.create(name: 'Black dog', abv: 5.5, tagline: 'Hoppy black wheat stout',
+                          description: 'Hoppy Black Wheat Stout',
                           food: ['Spicy chicken and chilli verde sauce enchiladas',
                                  'Smoked chorizo and strong cheese board'],
                           image: 'https://presshub.brewdog.com/images/cms/large/1440777209BREWDOGLOGO.jpg')
@@ -29,7 +31,7 @@ RSpec.describe BeersController, type: :controller do
     it 'should return a response message if beers were found with the provided keyword' do
       get :index, params: { search: { keyword: 'ipa' } }
       response_body = assigns(:response)
-      expect(response_body).to include 'This is what we found'
+      expect(response_body).to include 'Here are some nice doggos!'
     end
 
     it 'should return an empty array if no beers were found with the provided keyword' do
@@ -53,7 +55,7 @@ RSpec.describe BeersController, type: :controller do
     it 'should return a response message if a keyword has not been provided' do
       get :index, params: { search: { keyword: '' } }
       response_body = assigns(:response)
-      expect(response_body).to include "It seems like you didn't type anything. Try typing in a beer"
+      expect(response_body).to include "It seems like you didn't type anything. Try again!"
     end
   end
 end

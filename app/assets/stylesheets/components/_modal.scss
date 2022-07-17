@@ -1,0 +1,37 @@
+.modal-header {
+align-items: unset;
+border-bottom: none;
+}
+
+.modal-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px #F4F4F4 solid;
+}
+
+.modal-beer-content {
+  border: none;
+  padding: 0px 20px;
+}
+
+.modal-image {
+  height: 250px;
+}
+
+.beer-p {
+  font-size: 14px;
+}
+
+.modal-abv {
+  text-align: end;
+}
+
+.modal-footer {
+  border-top-color: #F4F4F4;
+}
