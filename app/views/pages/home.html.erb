@@ -1,18 +1,9 @@
 <div class="wrapper-home">
-  <%= image_tag "logo.png", class:"logo" %>
-    <div class="content">
-      <h1>Searching for some nice tips on beers?</h1>
-      <h2>Let's look up some good ol' brewdogs!</h2>
-      <div class="search-bar">
-        <%= simple_form_for :search, url: beers_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-          <div class="search-bar-form">
-            <%= f.input :keyword, label: false, class: "input"  %>
-              <button type="submit" class="btn-search">
-              Search
-            </button>
-          </div>
-        <% end %>
-      </div>
-    </div>
+  <a href="/" src="home" target="_blank"><%= image_tag "logo.png", class:"logo" %></a>
+  <div class="content">
+    <h1>Searching for some nice tips on beers?</h1>
+    <h2>Let's look up some good ol' brewdogs!</h2>
+    <%= render "components/search_bar" %>
+  </div>
   <%= image_tag "beers.png", class:"footer" %>
 </div>

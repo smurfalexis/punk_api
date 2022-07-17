@@ -16,10 +16,10 @@ def punk_api(page)
 end
 
 def save_beers(result)
-  brewdog_image = 'https://presshub.brewdog.com/images/cms/large/1440777209BREWDOGLOGO.jpg'
+  default_image = 'https://images.punkapi.com/v2/keg.png'
   result.each do |beer|
-    image = beer['image_url'] == nil ? brewdog_image : beer['image_url']
-    Beer.create(name: beer['name'], abv: beer['abv'],
+    image = beer['image_url'] == nil? ? default_image : beer['image_url']
+    Beer.create(name: beer['name'], abv: beer['abv'], tagline: beer['tagline'],
                 description: beer['description'], food: beer['food_pairing'],
                 image: image)
   end

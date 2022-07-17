@@ -1,0 +1,52 @@
+<div class="beers">
+  <% @beers.each do |beer| %>
+    <div class="beer" data-bs-toggle="modal" data-bs-target="#s<%= beer.id.to_s %>">
+      <div class="beer-content">
+      <%= image_tag beer.image, class:"image" %>
+      <div class="beer-name-tagline">
+        <p class="name"><%= beer.name %></p><br>
+        <p class="tagline"><%= beer.tagline %></p><br>
+      </div>
+      <div class="beer-abv-btn">
+        <p class="abv">ABV <%= beer.abv %> %</p>
+        <button type="button" class="button btn-beer">
+          See more
+        </button>
+      </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="s<%= beer.id.to_s %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-name">
+            <h5 class="modal-title" id="exampleModalLabel"><%= beer.name %></h5>
+            <p><%= beer.tagline %></p>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <%= image_tag beer.image, class:"modal-image" %>
+            <div class="modal-beer-content">
+              <p class="abv modal-abv">ABV <%= beer.abv %> %</p>
+              <p class="beer-p"><%= beer.description %></p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="modal-beer-content">
+              <p style="font-weight: bolder">FOOD RECOMMENDATIONS</p>
+              <% beer.food.each do |food| %>
+              <p class="beer-p"><%= food %></p>
+              <% end %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="button btn-beer" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

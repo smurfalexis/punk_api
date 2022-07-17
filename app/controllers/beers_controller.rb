@@ -3,10 +3,10 @@ class BeersController < ApplicationController
     if params[:search] && params[:search][:keyword].present?
       @key_word = params[:search][:keyword]
       @beers = Beer.search_by_keyword(params[:search][:keyword])
-      @response = @beers.empty? ? "The beer you're looking for hasn't been brewed yet!" : 'This is what we found'
+      @response = @beers.empty? ? "The beer you're looking for hasn't been brewed yet!" : 'Here are some nice doggos!'
     else
       @beers = []
-      @response = "It seems like you didn't type anything. Try typing in a beer"
+      @response = "It seems like you didn't type anything. Try again!"
     end
   end
 end

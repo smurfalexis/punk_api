@@ -5,7 +5,7 @@
   justify-content: center;
   padding: 20px 40px;
   margin-top: 2vh;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .search-bar-form{
@@ -14,17 +14,17 @@
   height: 38px !important;
 }
 
+.form-control {
+  border-radius: 4px;
+}
+
 .form-control:focus {
     box-shadow: none;
     border: none;
   }
 
 .btn-search {
-  background-color: #000000;
-  color: white;
   margin-left: 6px;
-  border-radius: 10px;
-  border: none;
   padding: 0px 14px;
 }
 
@@ -47,13 +47,5 @@
 
   .form-control {
     width: 470px;
-  }
-}
-
-// Laptops
-@media(min-width: 1020px) {
-  .btn-search:hover {
-    background-color: #000000cb;
-    transition: 0.3s;
   }
 }

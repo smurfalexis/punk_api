@@ -1,0 +1,98 @@
+.wrapper-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result {
+ margin-top: 24vh;
+}
+
+.beers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 0px 100px;
+  margin-top: 12vh;
+}
+
+.beer {
+  background: url('beer_foam.jpeg');
+  height: 180px;
+  width: 600px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.beer-content {
+  background-color: white;
+  height: 150px;
+  width: 570px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  padding: 12px;
+}
+
+
+.beer-name-tagline {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 2;
+  margin-left: 24px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: -16px;
+}
+
+.tagline {
+  font-size: 18px;
+}
+
+.abv {
+  font-size: 18px;
+  font-weight: bolder;
+  min-width: fit-content;
+}
+
+.beer-abv-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: fit-content;
+}
+
+.btn-beer {
+  padding: 4px 10px;
+}
+
+
+// Phones
+@media(max-width: 767px) {
+  .beer {
+    width: 360px;
+  }
+
+  .beer-content {
+    width: 340px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+}
