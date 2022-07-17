@@ -1,0 +1,12 @@
+.logo {
+  position: absolute;
+  left: 3%;
+  top: 6%;
+}
+
+// Phones
+@media(max-width: 767px) {
+  .logo {
+    width: 180px;
+  }
+}

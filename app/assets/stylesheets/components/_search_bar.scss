@@ -1,0 +1,59 @@
+.search-bar {
+  background: url('beer_foam.jpeg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  margin-top: 2vh;
+  border-radius: 10px;
+}
+
+.search-bar-form{
+  display: flex;
+  justify-content: center;
+  height: 38px !important;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: none;
+  }
+
+.btn-search {
+  background-color: #000000;
+  color: white;
+  margin-left: 6px;
+  border-radius: 10px;
+  border: none;
+  padding: 0px 14px;
+}
+
+// Phones
+@media(max-width: 767px) {
+  .search-bar {
+    width: 330px;
+  }
+
+  .form-control {
+    width: 220px;
+  }
+}
+
+// iPads
+@media(min-width: 768px) {
+  .search-bar {
+    width: 600px;
+  }
+
+  .form-control {
+    width: 470px;
+  }
+}
+
+// Laptops
+@media(min-width: 1020px) {
+  .btn-search:hover {
+    background-color: #000000cb;
+    transition: 0.3s;
+  }
+}
