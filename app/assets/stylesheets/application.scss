@@ -10,6 +10,45 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+// Graphical variables
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+
+// CSS partials
+@import "components/index";
+@import "pages/index";
+
+// Google fonts: Familjen Grotesk
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Familjen Grotesk', sans-serif !important;
+  background-color: white;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32vh;
+
+  h1 {
+    font-weight: 600;
+  }
+}
+
+// Phones
+@media(max-width: 767px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 16px;
+   }
+}

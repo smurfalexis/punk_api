@@ -1,7 +1,13 @@
-<h1>Search result for "<%= @key_word %>"</h1>
-<p><%= @response %></p>
-<% if @beers != [] %>
-  <% @beers.each do |beer| %>
-    <p><%= beer.name %></p><br>
-  <% end %>
-<% end %>
+<div class="wrapper-result">
+  <%= image_tag "logo.png", class:"logo" %>
+  <div class="content">
+    <h1>Search result for "<%= @key_word %>"</h1>
+    <h2><%= @response %></h2>
+  </div>
+    <% if @beers != [] %>
+      <% @beers.each do |beer| %>
+        <p><%= beer.name %></p><br>
+      <% end %>
+    <% end %>
+
+</div>
