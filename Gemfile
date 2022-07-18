@@ -58,7 +58,7 @@ gem 'pg_search'
 # Simple form
 gem 'simple_form'
 
-# rspec for testing where 3.4 is the latest version.
+# rspec for testing
 group :development, :test do
   gem 'rspec-rails', ">= 3.9.0"
   gem 'rails-controller-testing'
