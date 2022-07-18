@@ -1,4 +1,4 @@
-<div class="beers">
+<div class="beers" data-show-more-target="beers">
   <% @beers.each do |beer| %>
     <div class="beer" data-bs-toggle="modal" data-bs-target="#s<%= beer.id.to_s %>">
       <div class="beer-content">

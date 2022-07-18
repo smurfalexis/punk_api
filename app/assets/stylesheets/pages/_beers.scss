@@ -96,3 +96,16 @@
     font-size: 14px;
   }
 }
+
+.btns-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+}
+
+.btn-page {
+  margin-top: 60px;
+  padding: 10px 30px !important;
+  text-decoration: none;
+}
