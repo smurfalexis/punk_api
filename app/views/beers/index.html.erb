@@ -8,6 +8,8 @@
       <%= render "components/beers" %>
       <% if @offset == 0 %>
           <%= link_to "Next page", beers_path(:offset => @offset + 11, :search => { :keyword => @key_word }), class:"button btn-page" %>
+      <% elsif @beers.length < 10 %>
+        <%= link_to "Back", beers_path(:offset => (@offset - 11), :search => { :keyword => @key_word }), class:"button btn-page" %>
       <% else %>
       <div class="btns-page">
         <%= link_to "Back", beers_path(:offset => (@offset - 11), :search => { :keyword => @key_word }), class:"button btn-page" %>
