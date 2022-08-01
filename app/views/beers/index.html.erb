@@ -6,15 +6,15 @@
     <%= render "components/search_bar" %>
     <% if @beers != [] %>
       <%= render "components/beers" %>
-      <% if @offset == 0 %>
+      <% if @offset == 0 && @result.length > 10%>
           <%= link_to "Next page", beers_path(:offset => @offset + 11, :search => { :keyword => @key_word }), class:"button btn-page" %>
-      <% elsif @beers.length < 10 %>
+      <% elsif @offset > 10 && @beers.length < 10 %>
         <%= link_to "Back", beers_path(:offset => (@offset - 11), :search => { :keyword => @key_word }), class:"button btn-page" %>
-      <% else %>
-      <div class="btns-page">
-        <%= link_to "Back", beers_path(:offset => (@offset - 11), :search => { :keyword => @key_word }), class:"button btn-page" %>
-        <%= link_to "Next", beers_path(:offset => (@offset + 11), :search => { :keyword => @key_word }), class:"button btn-page" %>
-      </div>
+      <% elsif @offset > 10 && @result.length > 10 %>
+        <div class="btns-page">
+          <%= link_to "Back", beers_path(:offset => (@offset - 11), :search => { :keyword => @key_word }), class:"button btn-page" %>
+          <%= link_to "Next", beers_path(:offset => (@offset + 11), :search => { :keyword => @key_word }), class:"button btn-page" %>
+        </div>
       <% end %>
     <% end %>
   </div>
