@@ -18,10 +18,11 @@ end
 def save_beers(result)
   default_image = 'https://images.punkapi.com/v2/keg.png'
   result.each do |beer|
-    image = beer['image_url'] == nil? ? default_image : beer['image_url']
-    Beer.create(name: beer['name'], abv: beer['abv'], tagline: beer['tagline'],
+    image = beer['image_url'].nil? ? default_image : beer['image_url']
+    beer = Beer.new(name: beer['name'], abv: beer['abv'], tagline: beer['tagline'],
                 description: beer['description'], food: beer['food_pairing'],
                 image: image)
+    beer.save!
   end
 end
 
