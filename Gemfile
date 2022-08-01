@@ -63,3 +63,6 @@ group :development, :test do
   gem 'rspec-rails', ">= 3.9.0"
   gem 'rails-controller-testing'
 end
+
+# To schedule a task
+gem 'whenever', require: false
